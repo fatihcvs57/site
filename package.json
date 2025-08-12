@@ -1,0 +1,7 @@
+{
+  "name": "designpack-pro",
+  "private": true,
+  "scripts": {
+    "test": "echo \"No tests\""
+  }
+}
