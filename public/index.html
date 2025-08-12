@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Parçacı Panel</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="login">
+  <h2>Giriş</h2>
+  <form id="loginForm">
+    <input type="email" id="email" placeholder="Email" required>
+    <input type="password" id="password" placeholder="Şifre" required>
+    <button type="submit">Giriş</button>
+  </form>
+  <div id="loginError"></div>
+</div>
+
+<div id="app" class="hidden">
+  <nav>
+    <button data-tab="panel">Panel</button>
+    <button data-tab="items">Stok</button>
+    <button data-tab="sales">Satış</button>
+    <button data-tab="customers">Müşteriler</button>
+    <button data-tab="employees">Çalışanlar</button>
+    <button data-tab="payroll">Maaş</button>
+    <button id="logout">Çıkış</button>
+  </nav>
+
+  <section id="panel" class="tab">
+    <h2>Panel</h2>
+    <div id="dashboard"></div>
+  </section>
+
+  <section id="items" class="tab hidden">
+    <h2>Stok</h2>
+    <form id="itemForm">
+      <input id="itemSku" placeholder="SKU" required>
+      <input id="itemName" placeholder="Ad" required>
+      <input id="itemBuy" type="number" placeholder="Alış" required>
+      <input id="itemSell" type="number" placeholder="Satış" required>
+      <input id="itemStock" type="number" placeholder="Stok" required>
+      <input id="itemSupplier" placeholder="Tedarikçi">
+      <button type="submit">Kaydet</button>
+    </form>
+    <table id="itemsTable"></table>
+  </section>
+
+  <section id="sales" class="tab hidden">
+    <h2>Satış</h2>
+    <form id="saleForm">
+      <select id="saleItem"></select>
+      <input id="saleQty" type="number" placeholder="Adet">
+      <button type="button" id="addToCart">Ekle</button>
+      <select id="paymentMethod">
+        <option value="cash">Nakit</option>
+        <option value="card">Kart</option>
+        <option value="on-account">Veresiye</option>
+      </select>
+      <button type="submit">Satışı Tamamla</button>
+    </form>
+    <table id="cartTable"></table>
+  </section>
+
+  <section id="customers" class="tab hidden">
+    <h2>Müşteriler</h2>
+    <form id="customerForm">
+      <input id="custName" placeholder="Ad" required>
+      <input id="custPhone" placeholder="Telefon">
+      <input id="custEmail" placeholder="Email">
+      <input id="custAddress" placeholder="Adres">
+      <button type="submit">Kaydet</button>
+    </form>
+    <table id="customersTable"></table>
+  </section>
+
+  <section id="employees" class="tab hidden">
+    <h2>Çalışanlar</h2>
+    <form id="empForm">
+      <input id="empName" placeholder="Ad" required>
+      <input id="empPhone" placeholder="Telefon">
+      <input id="empSalary" type="number" placeholder="Maaş">
+      <input id="empStart" type="date">
+      <input id="empEnd" type="date">
+      <button type="submit">Kaydet</button>
+    </form>
+    <table id="employeesTable"></table>
+  </section>
+
+  <section id="payroll" class="tab hidden">
+    <h2>Maaş</h2>
+    <form id="payForm">
+      <select id="payEmployee"></select>
+      <input id="payAmount" type="number" placeholder="Tutar">
+      <input id="payNote" placeholder="Not">
+      <button type="submit">Öde</button>
+    </form>
+    <table id="payHistory"></table>
+  </section>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

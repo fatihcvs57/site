@@ -1,0 +1,5 @@
+body { font-family: sans-serif; }
+.hidden { display: none; }
+nav button { margin-right: 5px; }
+table { width: 100%; border-collapse: collapse; margin-top:10px; }
+th, td { border: 1px solid #ccc; padding: 4px; }
